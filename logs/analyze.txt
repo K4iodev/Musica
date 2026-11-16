@@ -6,4 +6,4 @@ Analyzing app...
    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/main.dart:452:41 • deprecated_member_use
    info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/main.dart:502:51 • deprecated_member_use
 
-5 issues found. (ran in 5.5s)
+5 issues found. (ran in 5.7s)
