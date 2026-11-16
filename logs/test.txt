@@ -1,0 +1,7 @@
+
+::group::✅ Passing tests
+✅ Track converte para JSON e volta sem perder dados
+✅ Track antigo (v0.2) sem campos novos ainda é lido
+::endgroup::
+
+🎉 2 tests passed.
