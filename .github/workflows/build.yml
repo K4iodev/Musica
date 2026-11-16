@@ -30,6 +30,16 @@ jobs:
           cd app
           flutter create --platforms=android,windows --project-name kaio_music --org com.kaio . 2>&1 | tee ../logs/create.txt
           rm -f test/widget_test.dart
+          cat >> android/build.gradle.kts <<'EOF'
+
+          subprojects {
+              plugins.withId("com.android.library") {
+                  extensions.configure(com.android.build.api.dsl.LibraryExtension::class.java) {
+                      compileSdk = 36
+                  }
+              }
+          }
+          EOF
           flutter pub get 2>&1 | tee ../logs/pubget.txt
       - name: Analisar codigo
         shell: bash
