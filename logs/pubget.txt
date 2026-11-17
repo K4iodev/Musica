@@ -2,7 +2,7 @@ Resolving dependencies...
 Downloading packages...
   audio_session 0.1.25 (0.2.4 available)
   cross_file 0.3.5+5 (0.4.0 available)
-  file_picker 8.3.7 (13.3.3 available)
+  file_picker 8.3.7 (13.4.0 available)
   flutter_lints 5.0.0 (6.0.0 available)
   just_audio 0.9.46 (0.10.6 available)
   lints 5.1.1 (6.1.0 available)
