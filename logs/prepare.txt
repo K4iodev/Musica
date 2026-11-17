@@ -1,0 +1,1 @@
+MainActivity.kt substituído em android/app/src/main/kotlin/com/kaio/kaio_music/MainActivity.kt (package com.kaio.kaio_music)
