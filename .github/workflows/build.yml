@@ -30,16 +30,7 @@ jobs:
           cd app
           flutter create --platforms=android,windows --project-name kaio_music --org com.kaio . 2>&1 | tee ../logs/create.txt
           rm -f test/widget_test.dart
-          cat >> android/build.gradle.kts <<'EOF'
-
-          subprojects {
-              plugins.withId("com.android.library") {
-                  extensions.configure(com.android.build.api.dsl.LibraryExtension::class.java) {
-                      compileSdk = 36
-                  }
-              }
-          }
-          EOF
+          if [ -f tool/ci_prepare.sh ]; then bash tool/ci_prepare.sh 2>&1 | tee ../logs/prepare.txt; fi
           flutter pub get 2>&1 | tee ../logs/pubget.txt
       - name: Analisar codigo
         shell: bash
@@ -54,7 +45,8 @@ jobs:
       - name: Compilar APK
         shell: bash
         working-directory: app
-        run: flutter build apk --release 2>&1 | tee ../logs/build.txt
+        run: |
+          if [ -f tool/ci_build_android.sh ]; then bash tool/ci_build_android.sh; else flutter build apk --release 2>&1 | tee ../logs/build.txt; fi
       - name: Publicar logs no repositorio
         if: always()
         shell: bash
